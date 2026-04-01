@@ -11,6 +11,8 @@
 
 # LpkUnpacker
 
+https://github.com/ihopenot/LpkUnpacker
+
 这个工具用来解包Live2dViewerEx的LPK文件
 
 如果你在使用工具时遇到任何困难，请先查询'[Issues](https://github.com/ihopenot/LpkUnpacker/issues)'中的内容
