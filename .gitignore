@@ -1,9 +1,4 @@
-venv/
-settings.json
-build/
-__pycache__/
-.vscode
-
-start.bat
-output
-Resources/
+LPK_Auto_Unpack.spec
+dist/LPK_Auto_Unpack.exe
+.idea/*
+__pycache__/*
