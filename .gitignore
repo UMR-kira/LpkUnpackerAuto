@@ -1,3 +1,5 @@
 dist/LPK_Auto_Unpack.exe
 .idea/*
 __pycache__/*
+build/*
+LPK_Auto_Unpacker.spec
