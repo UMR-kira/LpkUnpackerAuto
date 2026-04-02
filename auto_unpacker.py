@@ -4,8 +4,8 @@
 LPK自动解包程序
 删改自 https://github.com/ihopenot/LpkUnpacker
 1、只保留了LPK解包功能，选择文件夹后自动递归扫描所有LPK文件并解包
-2、减少目录层数，直接用读取的LPK原名拼接源文件夹名作为解包文件夹名
-3、每个LPK解包文件夹内复制了预览图方便查看
+2、减少目录层数，直接用读取的LPK标题拼接源id名作为解包文件夹名
+3、每个LPK解包文件夹内复制了源文件预览图方便查看
 4、解决错误闪退问题，错误解包文件会自动复制源文件夹到error子文件夹并写入错误信息
 """
 from __future__ import unicode_literals
