@@ -1,17 +1,17 @@
-# 在源程序上做了以下修改自用
+# LPK自动解包程序
+
+删改自 https://github.com/ihopenot/LpkUnpacker
 
 1、只保留了LPK解包功能，选择文件夹后自动递归扫描所有LPK文件并解包
 
-2、减少目录层数，不多余创建原id文件夹，直接创建LPK原名文件夹
+2、减少目录层数，直接用读取的LPK标题拼接源id名作为解包文件夹名
 
-3、每个LPK单独解包文件夹内复制了缩略图方便查看，并保留原文件夹名id文本和导出信息
+3、每个LPK解包文件夹内复制了源文件预览图方便查看
 
-4、解决错误闪退问题，错误解包文件会自动复制源文件夹到error子文件夹并写入错误信息文本
+4、解决错误闪退问题，错误解包文件会自动复制源文件夹到error子文件夹并写入错误信息
 
 
 # LpkUnpacker
-
-https://github.com/ihopenot/LpkUnpacker
 
 这个工具用来解包Live2dViewerEx的LPK文件
 
