@@ -1,3 +1,7 @@
+"""
+来自 https://github.com/ihopenot/LpkUnpacker/blob/master/Core/utils.py
+"""
+
 from hashlib import md5
 import os
 import re

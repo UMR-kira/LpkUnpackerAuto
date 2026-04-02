@@ -1,7 +1,10 @@
-from __future__ import unicode_literals
+"""
+来自 https://github.com/ihopenot/LpkUnpacker/blob/master/Core/lpk_loader.py
+"""
 
+from __future__ import unicode_literals
 import logging
-import os
+# import os
 import zipfile
 from typing import List
 from typing import Tuple
