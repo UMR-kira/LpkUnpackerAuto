@@ -61,7 +61,7 @@ def copy_failed_source_to_error(lpk_path, output_base_dir, error_reason=None):
     """将失败的源文件夹复制到错误目录"""
     try:
         # 创建错误目录
-        error_dir = os.path.join(output_base_dir, "error")
+        error_dir = os.path.join(output_base_dir, "000error")
         safe_mkdir(error_dir)
         # 确定源文件夹（LPK文件所在的目录）
         source_dir = os.path.dirname(lpk_path)
@@ -136,8 +136,11 @@ def extract_lpk_file(lpk_path, config_path, output_dir, item_index, total_items)
         error_msg = str(e)
         print(f"  解包失败: {error_msg}")
         try:
-            shutil.rmtree(output_dir, ignore_errors=True)
-            print(f"  已清理产生的空目录")
+            # 清理产生的空目录
+            if output_dir and os.path.exists(output_dir):
+                if not os.listdir(output_dir):
+                    shutil.rmtree(output_dir, ignore_errors=True)
+                    print(f"  已清理产生的空目录")
         except Exception as cleanup_error:
             print(f"  清理空目录时出错（可忽略）: {cleanup_error}")
         import traceback
@@ -166,11 +169,15 @@ def scan_and_extract(folder_path):
     success_count = 0
     failed_files = []
     for i, lpk_path in enumerate(lpk_files, 1):
+        # 计算相对路径（保留原始目录结构）
+        relative_path = os.path.dirname(os.path.relpath(os.path.dirname(lpk_path), folder_path))
+        # 构建输出子目录
+        output_subdir = os.path.join(output_base_dir, relative_path)
         config_path = os.path.join(os.path.dirname(lpk_path), "config.json")
         success, error_msg = extract_lpk_file(
             lpk_path, 
             config_path, 
-            output_base_dir,
+            output_subdir,
             i, 
             len(lpk_files)
         )
